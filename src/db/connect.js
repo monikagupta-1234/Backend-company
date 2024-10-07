@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 export default function connectDb() {
+  const mongodbUrl = process.env.MONGO_DB_URL;
   mongoose
-    .connect("mongodb://localhost:27017/ReviewRating")
+    .connect(mongodbUrl)
     .then((res) => {
       console.log("db connected successfully");
     })
